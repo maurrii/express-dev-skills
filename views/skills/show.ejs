@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,20 @@
   <title>Express-Dev-Lab</title>
 </head>
 <body>
-  <h1>Skills</h1>
-  <% if(error) { %>
-    <h2>
-      <%= error %>
+<h1>Todos</h1>
+<% if(error) { %>
+  <h2>
+    <%= error %>
+  </h2>
+  <% } else { %>
+    <h2>Todo #<%= todo._id %>
     </h2>
+    <h3>
+      <%= todo.text %>
+    </h3>
+    <p>Complete: <%= todo.done ? 'Yes' : 'No' %>
+    </p>
     <% } %>
-      <ul>
-        <% skills.forEach(function(todo) { %>
-          <li>
-            <a href="/skills/<%= skills._id %>"><%= skills.type %></a>
-              -
-              <%= skills.done ? 'Yes got it' : 'No im lost' %>
-          </li>
-          <% }) %>
-      </ul>
+      <a href="/todos">Go back</a>
 </body>
 </html>
